@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Custom Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070709;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262633;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5500;
+}
+
+/* Base Body Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #070709;
+  color: #f3f4f6;
+  font-family: 'General Sans', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Editorial Typography Utilities */
+.tracking-headline {
+  letter-spacing: -0.035em;
+}
+
+.tracking-eyebrow {
+  letter-spacing: 0.12em;
+}
+
+.leading-headline {
+  line-height: 0.95;
+}
+
+/* Glassmorphic Surfaces */
+.glass-panel {
+  background: rgba(19, 19, 24, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(19, 19, 24, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 85, 0, 0.25);
+  box-shadow: 0 0 30px -5px rgba(255, 85, 0, 0.15);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(26, 26, 34, 0.8) 0%, rgba(13, 13, 17, 0.9) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 85, 0, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(255, 85, 0, 0.2);
+}
+
+/* Outlined / Stroke Text Treatment */
+.text-stroke-faint {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.08);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-stroke-ember {
+  -webkit-text-stroke: 1.5px rgba(255, 85, 0, 0.35);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Film Grain Texture Overlay */
+.bg-noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Text Gradients */
+.text-gradient-flame {
+  background: linear-gradient(135deg, #FFF5ED 0%, #FFB800 40%, #FF5500 80%, #FF1E56 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFD166 50%, #FFB800 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-white-ember {
+  background: linear-gradient(180deg, #FFFFFF 30%, #FFAA77 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-muted {
+  background: linear-gradient(180deg, #FFFFFF 0%, #9CA3AF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Radial Glow Backgrounds */
+.bg-glow-radial {
+  background: radial-gradient(circle at 50% 30%, rgba(255, 85, 0, 0.15) 0%, rgba(255, 30, 86, 0.05) 45%, transparent 70%);
+}
+
+.bg-radial-spotlight {
+  background: radial-gradient(circle at center, rgba(255, 85, 0, 0.12) 0%, transparent 60%);
+}
+
+/* Flame animation for text & buttons */
+@keyframes flame-flicker {
+  0%, 100% { opacity: 0.95; filter: drop-shadow(0 0 15px rgba(255, 85, 0, 0.6)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 28px rgba(255, 184, 0, 0.85)); }
+}
+
+.animate-flame {
+  animation: flame-flicker 3s infinite ease-in-out;
+}
