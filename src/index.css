@@ -30,11 +30,16 @@ body {
   padding: 0;
   background-color: #070709;
   color: #f3f4f6;
-  font-family: 'General Sans', 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+/* Playfair Display for all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 /* Editorial Typography Utilities */

@@ -39,10 +39,10 @@ export default {
         }
       },
       fontFamily: {
-        clash: ['"Clash Display"', '"Bricolage Grotesque"', 'sans-serif'],
-        display: ['"Clash Display"', '"Bricolage Grotesque"', 'sans-serif'],
-        headline: ['"Clash Display"', '"Bricolage Grotesque"', 'sans-serif'],
-        sans: ['"General Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        playfair: ['"Playfair Display"', 'Georgia', 'serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        headline: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'glow-ember': '0 0 35px -5px rgba(255, 85, 0, 0.45)',
