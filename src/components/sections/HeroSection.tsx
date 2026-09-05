@@ -124,7 +124,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       id: 'burger' as const,
       label: 'Inferno Wagyu Burger',
       icon: '🍔',
-      image: '/images/hero-wagyu-burger.png',
+      image: '/images/custom-burger-hero.png',
       tagline: '700°F Cast Iron Searing',
       highlight: 'Molten Aged Cheddar & Japanese Wagyu',
     },
@@ -269,19 +269,39 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
 
-        {/* Right Column: 3-Piece Stacking Falling Burger Assembly Stage (~Right 7 Columns) */}
-        <div className="lg:col-span-7 relative flex items-center justify-center">
-          {activeFood === 'burger' ? (
-            <HeroBurgerAssembly mousePos={mousePos} />
-          ) : (
-            <div className="relative w-full max-w-[500px] h-[460px] flex items-center justify-center">
-              <img
-                src={currentFood.image}
-                alt={currentFood.label}
-                className="w-full h-auto max-h-[440px] object-contain rounded-3xl filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.9)]"
-              />
-            </div>
-          )}
+        {/* Right Column: Hero Food Showcase Stage */}
+        <div className="lg:col-span-7 relative flex items-center justify-center min-h-[460px] sm:min-h-[520px]">
+          {/* Subtle Ambient Radial Glow */}
+          <div className="absolute w-[440px] h-[440px] bg-gradient-to-tr from-ember-500/25 via-crimson-600/15 to-amber-500/20 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Floating Food Display with Mouse Parallax */}
+          <motion.div
+            style={{
+              x: mousePos.x * 14,
+              y: mousePos.y * 10,
+            }}
+            animate={{
+              y: [0, -12, 0],
+            }}
+            transition={{
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              },
+            }}
+            className="relative w-full max-w-[560px] flex flex-col items-center justify-center p-2 z-10"
+          >
+            {/* Soft Ground Contact Shadow */}
+            <div className="absolute bottom-4 w-3/4 h-8 bg-black/90 rounded-full blur-xl pointer-events-none" />
+
+            {/* Custom Hero Burger Image */}
+            <img
+              src={activeFood === 'burger' ? '/images/custom-burger-hero.png' : currentFood.image}
+              alt={currentFood.label}
+              className="relative z-10 w-full h-auto max-h-[480px] sm:max-h-[520px] object-contain rounded-3xl filter drop-shadow-[0_25px_45px_rgba(0,0,0,0.95)] hover:scale-105 transition-transform duration-500"
+            />
+          </motion.div>
 
           {/* Food Switcher Quick Selector (Bottom Center) */}
           <div
